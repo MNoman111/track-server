@@ -10,6 +10,7 @@ const trackRoute = require("./routes/trackRoute");
 const auth = require("./middleware/auth");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json())
 
@@ -29,6 +30,6 @@ mongoose.connection.on("error", () => {
     console.log("error connecting to db.");
 })
 
-app.listen(3000, () => {
-    console.log(`App is listening to port 3000`);
+app.listen(port, () => {
+    console.log(`App is listening to port ${port}`);
 } )
